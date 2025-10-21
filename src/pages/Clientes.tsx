@@ -6,6 +6,7 @@ import styles from "./Main.module.css";
 export default function Clientes() {
   const [selected, setSelected] = useState("");
   const navigate = useNavigate();
+
   return (
     <div className={styles.container}>
       <div className={styles.card}>
@@ -24,9 +25,9 @@ export default function Clientes() {
         <div className={styles.actions}>
           <button
             className={styles.button}
-            onClick={() => navigate("/unrelated")}
+            onClick={() => navigate("/historial")}
           >
-            Ir a Unrelated
+            Historial
           </button>
         </div>
       </div>

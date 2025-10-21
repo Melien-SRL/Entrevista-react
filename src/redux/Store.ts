@@ -1,31 +1,9 @@
-import { configureStore, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
+import selectedClientIds from "./ClienteSlice";
 
-type FlagState = { value: boolean };
-const initialState: FlagState = { value: false };
-
-const flagSlice = createSlice({
-  name: "flag",
-  initialState,
-  reducers: {
-    set(state, action: PayloadAction<boolean>) {
-      state.value = action.payload;
-    },
-    toggle(state) {
-      state.value = !state.value;
-    },
-  },
+export const store = configureStore({
+  reducer: { selectedClientIds },
 });
 
-export const { set, toggle } = flagSlice.actions;
-
-const store = configureStore({
-  reducer: {
-    flag: flagSlice.reducer,
-  },
-});
-
-export default store;
-
-type AppStore = typeof store;
-export type RootState = ReturnType<AppStore["getState"]>;
+export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
