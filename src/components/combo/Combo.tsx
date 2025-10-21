@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useOptionsQuery } from "../../queries/useOptionsQuery";
+import { useClientesQuery } from "../../queries/useOptionsQuery";
 import styles from "./Combo.module.css";
 import { useDispatch } from "react-redux";
 import { add } from "../../redux/ClienteSlice";
@@ -10,7 +10,7 @@ type ComboProps = {
 };
 
 export default function Combo({ value, onChange, placeholder }: ComboProps) {
-  const { data, isLoading, isError } = useOptionsQuery();
+  const { data, isLoading, isError } = useClientesQuery();
   const [chosen, setChosen] = useState<string>("");
   const dispatch = useDispatch();
 

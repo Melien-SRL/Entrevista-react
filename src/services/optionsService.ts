@@ -54,7 +54,7 @@ const data: ClientData[] = [
   },
 ];
 
-export function fetchOptions(): Promise<any[]> {
+export function fetchClientes(): Promise<any[]> {
   return new Promise((resolve) => {
     setTimeout(() => resolve(data), 1000);
   });

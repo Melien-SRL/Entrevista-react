@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchOptions } from "../services/optionsService";
+import { fetchClientes } from "../services/optionsService";
 
-export function useOptionsQuery() {
-  return useQuery({ queryKey: ["options"], queryFn: fetchOptions });
+export function useClientesQuery() {
+  return useQuery({ queryKey: ["options"], queryFn: fetchClientes });
 }
